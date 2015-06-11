@@ -108,6 +108,9 @@ RUN apt-get -y install \
     apt-get -y --auto-remove purge git nodejs nodejs-legacy npm && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/*
+    
+RUN apt-get update
+RUN apt-get -y install openssh-server
 
 ############################################################
 # Add and enable the apache site and disable all other sites
